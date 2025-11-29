@@ -888,24 +888,34 @@ function loadTeaserVideoContainer(video_container, category_name, scene) {
                 </video>
             </div>
         `;
-        // if (window.jQuery && $.fn.syncer) {
-        //     $("#" + category_name + "-video-container").syncer(click_to_pause=false, hover_to_sync=false, fixed_height_timeout=2000);
-        // }
-        function tryFixHeight() {
+
+        function fixHeight() {
             fixed = false;
-            if ($(video_container).height() !== undefined) {
+            videos = $(video_container).find("video");
+            all_videos_loaded = true;
+            console.log(videos);
+            for (let i = 0; i < videos.length; i++) {
+                if (videos[i].readyState < 3) {
+                    all_videos_loaded = false;
+                }
+            }
+            if (all_videos_loaded) {
                 $(video_container).css("height", $(video_container).height() + "px");
                 fixed = fixed | true;
             }
+            return fixed;
+        }
+        function tryFixHeight() {
+            let fixed = fixHeight();
+            if (!fixed) {
+                setTimeout(function() {
+                    tryFixHeight();
+                }, 100);
+            }
         }
         setTimeout(function() {
-            let fixed = tryFixHeight();
-            if (!fixed) {
-            setTimeout(function() {
-                tryFixHeight();
-            }, 1000);
-            }
-        }, 1000);
+            tryFixHeight();
+        }, 500);
 
     } else if (current_filename != filename) {
         video_container.innerHTML = video_container.innerHTML.replaceAll(current_filename, filename);

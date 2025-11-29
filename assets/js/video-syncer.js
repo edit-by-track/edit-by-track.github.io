@@ -5,19 +5,25 @@
       reset_height: false,
       click_to_pause: true,
       hover_to_sync: true,
-      fixed_height_timeout: 4000,
+      fixed_height_timeout: 500,
     }, options);
 
     return this.each(function() {
       var container = $(this);
 
-      function tryFixHeight() {
+      function fixHeight() {
         fixed = false;
+        
+        videos = container.find("video").toArray();
+        for (let v of videos) {
+          if (v.readyState < 3) return false;
+        }
+
         if (container.height() !== undefined) {
           container.css("height", container.height() + "px");
           fixed = fixed | true;
         }
-        videos = container.find("video").toArray();
+
         video_height = null;
         for (let v of videos) {
           if (v.clientHeight !== undefined) {
@@ -42,14 +48,16 @@
           v.style.height = "auto";
         }
       }
-      setTimeout(function() {
-        let fixed = tryFixHeight();
+      function tryFixHeight() {
+        let fixed = fixHeight();
         if (!fixed) {
-          setTimeout(function() {
-            tryFixHeight();
-          }, options.fixed_height_timeout);
+          setTimeout(tryFixHeight, options.fixed_height_timeout);
+        } else {
+          console.log("Fixed video container height.");
         }
-      }, options.fixed_height_timeout);
+      }
+
+      setTimeout(tryFixHeight, options.fixed_height_timeout);
 
       async function _pauseOneVideo(v) {
         v.pause();
