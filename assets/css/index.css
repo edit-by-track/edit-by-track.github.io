@@ -327,6 +327,10 @@ footer {
   padding-left: 1em;
 }
 
+.ack {
+  font-size: 17px;
+}
+
 .description li {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -622,6 +626,10 @@ p {
     margin-left: 0%;
     margin-right: 0%;
     width: 100%;
+  }
+
+  .ack {
+    font-size: 14px;
   }
 
   .columns {

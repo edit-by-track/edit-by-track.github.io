@@ -63,7 +63,7 @@ category_examples = {
         'modes': [''],  // disabled
         'labels': {
             'cat-sniff-food':       ['Input', 'Enlarge the cat\'s head'],
-            'wallaby':              ['Input', 'Camera: unchanged; Object: make the wallaby stand up'],
+            'wallaby':              ['Input', 'Camera: arc right; Object: make the wallaby stand up'],
             'ride-horse':           ['Input', 'Camera: unchanged; Object: make the horse stand up'],
             'dog-sofa':             ['Input', 'Enlarge the dog\'s head'],
             'dachshund':            ['Input', 'Stretch the dachshund\'s body'],
@@ -83,11 +83,11 @@ category_examples = {
         'modes': [''],  // disabled
         'labels': {
             'kid-puppets':          ['Input', 'Remove the kid'],
-            'yoga-beach':           ['Input', 'Remove the man'],
+            'yoga-beach':           ['Input', 'Remove the man & shift the camera trajectory'],
             'proposal':             ['Input', 'Remove the photographer & adjust the camera trajectory'],
             'petting-cat':          ['Input', 'Remove the hands & make the camera static'],
             'wooden-dinosaur':      ['Input', 'Remove the hand & pan the camera left'],
-            'six-people-swim':      ['Input', 'Remove all people'],
+            'six-people-swim':      ['Input', 'Remove all people & make the camera static'],
             'penguin':              ['Input', 'Duplicate the penguin'],
             'meerkat':              ['Input', 'Duplicate the meerkat'],
         },
