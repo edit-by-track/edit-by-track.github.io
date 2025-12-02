@@ -595,8 +595,8 @@ function display_block(category_name) {
                         &nbsp;&nbsp;&nbsp;&nbsp;                        
                         <span class="icon">
                             <i class="fas fa-download"></i>
-                        </span>Download [<a id="${category_name}-download-video" target="_blank" href="" download="">video</a> / 
-                            <a id="${category_name}-download-video-tracks" target="_blank" href="" download="">video with track</a>]
+                        </span>Download [<u><a id="${category_name}-download-video" target="_blank" href="" download="">video</a></u> / 
+                            <u><a id="${category_name}-download-video-tracks" target="_blank" href="" download="">video with track</a></u>]
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="#top"><span class="icon">
                             <i class="fas fa-chevron-up"></i>
