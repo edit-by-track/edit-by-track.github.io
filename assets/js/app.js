@@ -756,12 +756,16 @@ function loadDemoVideoContainer(video_container, category_name, scene, method, m
 
     // update download links
     download_link = document.getElementById(category_name + "-download-video");
-    download_link.href = `./assets/videos/${category_name}/${filename}.mp4`;
-    download_link.download = `${category_name}-${filename}.mp4`;
-    
+    if (download_link) {
+        download_link.href = `./assets/videos/${category_name}/${filename}.mp4`;
+        download_link.download = `${category_name}-${filename}.mp4`;
+    }
+
     download_link_tracks = document.getElementById(category_name + "-download-video-tracks");
-    download_link_tracks.href = `./assets/videos/${category_name}/${filename}-tracks.mp4`;
-    download_link_tracks.download = `${category_name}-${filename}-tracks.mp4`;
+    if (download_link_tracks) {
+        download_link_tracks.href = `./assets/videos/${category_name}/${filename}-tracks.mp4`;
+        download_link_tracks.download = `${category_name}-${filename}-tracks.mp4`;
+    }
 
 }
 
