@@ -588,14 +588,19 @@ function display_block(category_name) {
                         <span class="icon">
                             <i class="far fa-hand-paper"></i>
                         </span>Hover on video to show tracks
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <span class="icon">
                             <i class="far fa-hand-point-up"></i>
                         </span>Click video to pause
-                        &nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;
                         <a href="#top"><span class="icon">
                             <i class="fas fa-chevron-up"></i>
                         </span>Back to top</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="icon">
+                            <i class="fas fa-download"></i>
+                        </span>Download [<a id="${category_name}-download-video" target="_blank" href="" download="">video</a> / 
+                            <a id="${category_name}-download-video-tracks" target="_blank" href="" download="">video with track</a>]
                     </p>
                 </div>
             </div>
@@ -748,6 +753,16 @@ function loadDemoVideoContainer(video_container, category_name, scene, method, m
         method_description_div = document.getElementById(category_name + "-method-description");
         method_description_div.innerHTML = `<span>${category_examples[category_name]['method_descriptions'][method]}</span>`;
     }
+
+    // update download links
+    download_link = document.getElementById(category_name + "-download-video");
+    download_link.href = `./assets/videos/${category_name}/${filename}.mp4`;
+    download_link.download = `${category_name}-${filename}.mp4`;
+    
+    download_link_tracks = document.getElementById(category_name + "-download-video-tracks");
+    download_link_tracks.href = `./assets/videos/${category_name}/${filename}-tracks.mp4`;
+    download_link_tracks.download = `${category_name}-${filename}-tracks.mp4`;
+
 }
 
 function loadComparisonVideoContainer(video_container, category_name, method_name, pill) {
