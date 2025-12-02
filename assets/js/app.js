@@ -592,15 +592,15 @@ function display_block(category_name) {
                         <span class="icon">
                             <i class="far fa-hand-point-up"></i>
                         </span>Click video to pause
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="#top"><span class="icon">
-                            <i class="fas fa-chevron-up"></i>
-                        </span>Back to top</a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;                        
                         <span class="icon">
                             <i class="fas fa-download"></i>
                         </span>Download [<a id="${category_name}-download-video" target="_blank" href="" download="">video</a> / 
                             <a id="${category_name}-download-video-tracks" target="_blank" href="" download="">video with track</a>]
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="#top"><span class="icon">
+                            <i class="fas fa-chevron-up"></i>
+                        </span>Back to top</a>
                     </p>
                 </div>
             </div>
