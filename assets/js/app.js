@@ -594,7 +594,7 @@ function display_block(category_name) {
                         </span>Click video to pause
                         &nbsp;&nbsp;&nbsp;&nbsp;                        
                         <span class="icon">
-                            <i class="fas fa-angle-double-down"></i>
+                            <i class="fas fa-download"></i>
                         </span>Download [<a id="${category_name}-download-video" target="_blank" href="" download="">video</a> / 
                             <a id="${category_name}-download-video-tracks" target="_blank" href="" download="">video with track</a>]
                         &nbsp;&nbsp;&nbsp;&nbsp;
